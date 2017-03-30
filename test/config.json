@@ -1,0 +1,56 @@
+{
+  "run": {
+    "DEPENDENCY1": {
+      "require":  "lib/dependency1.js",
+      "new":      true,
+      "args":     []
+    },
+    "DEPENDENCY2": {
+      "require":  "lib/dependency2.js",
+      "new":      true,
+      "args":     []
+    },
+    "FS": {
+      "require":  "fs",
+      "new":      false,
+      "args":     []
+    },
+    "UTIL": {
+      "require":  "util",
+      "new":      false,
+      "args":     []
+    },
+    "DEPENDENCY3": {
+      "require":  "lib/dependency3.js",
+      "new":      true,
+      "args":     ["DEPENDENCY1", "DEPENDENCY2", "FS", "UTIL"]
+    }
+  },
+  "test": {
+    "DEPENDENCY1": {
+      "require":  "lib/dependency1mock.js",
+      "new":      true,
+      "args":     []
+    },
+    "DEPENDENCY2": {
+      "require":  "lib/dependency2mock.js",
+      "new":      true,
+      "args":     []
+    },
+    "FS": {
+      "require":  "fs",
+      "new":      false,
+      "args":     []
+    },
+    "UTIL": {
+      "require":  "util",
+      "new":      false,
+      "args":     []
+    },
+    "DEPENDENCY3": {
+      "require":  "lib/dependency3mock.js",
+      "new":      true,
+      "args":     ["DEPENDENCY1", "DEPENDENCY2", "FS", "UTIL"]
+    }
+  }
+}
