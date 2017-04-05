@@ -2,10 +2,12 @@
 
 const expect        = require('chai').expect;
 const config        = require('./config.json');
-const dependency1m  = new (require('./lib/dependency1mock'));
 const di            = require('../lib/di');
 const fs            = require('fs');
 const util          = require('util');
+const dependency1m  = new (require('./lib/dependency1mock'));
+const dependency2m  = new (require('./lib/dependency2mock'));
+const dependency4   = new (require('./lib/dependency4'))(fs, util);
 const instance      = new di(fs, config, 'test', __dirname);
 
 describe('DI', () => {
@@ -32,10 +34,12 @@ describe('DI', () => {
         expect(instance.get.bind(instance, 'DEPENDENCY1')).to.not.throw(Error);
         expect(instance.get('DEPENDENCY1')).to.deep.equal(dependency1m);
         expect(instance.get.bind(instance, 'DEPENDENCY3')).to.not.throw(Error);
-        expect(instance.get('DEPENDENCY3').getDep1()).to.deep.equal(dependency1m);
+        expect(instance.get('DEPENDENCY2')).to.deep.equal(dependency2m);
         expect(instance.get('FS').existsSync('./test/config.json')).to.equal(true);
-        expect(instance.get('DEPENDENCY3').getDep3()).to.deep.equal(instance.get('FS'));
+        expect(instance.get('DEPENDENCY3').getDep1()).to.deep.equal(dependency1m);
+        expect(instance.get('DEPENDENCY3').getDep2()).to.deep.equal(dependency2m);
         expect(instance.get('DEPENDENCY3').getDep3()).to.deep.equal(fs);
+        expect(instance.get('DEPENDENCY3').getDep3()).to.deep.equal(instance.get('FS'));
         expect(instance.get('DEPENDENCY3').getDep4()).to.deep.equal(util);
         done();
     });
@@ -47,6 +51,14 @@ describe('DI', () => {
         expect(instance.addDependency.bind(instance, 'FS3', fs)).to.not.throw(Error);
         expect(instance.get('FS3').existsSync('./test/config.json')).to.equal(true);
         expect(instance.get('FS3')).to.deep.equal(fs);
+        done();
+    });
+
+    it ('checking retrieval of dependency from other scope', (done) => {
+        expect(instance.get.bind(instance, 'DEPENDENCY4')).to.not.throw(Error);
+        expect(instance.get('DEPENDENCY4').getFs()).to.deep.equal(fs);
+        expect(instance.get('DEPENDENCY4').getUtil()).to.deep.equal(util);
+        expect(instance.get.bind(instance, 'DEPENDENCY5')).to.throw(Error);
         done();
     });
 });

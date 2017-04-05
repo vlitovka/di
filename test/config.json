@@ -24,6 +24,11 @@
       "require":  "lib/dependency3.js",
       "new":      true,
       "args":     ["DEPENDENCY1", "DEPENDENCY2", "FS", "UTIL"]
+    },
+    "DEPENDENCY4": {
+      "require":  "lib/dependency4.js",
+      "new":      true,
+      "args":     ["FS", "UTIL"]
     }
   },
   "test": {
