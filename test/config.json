@@ -12,12 +12,10 @@
     },
     "FS": {
       "require":  "fs",
-      "new":      false,
       "args":     []
     },
     "UTIL": {
       "require":  "util",
-      "new":      false,
       "args":     []
     },
     "DEPENDENCY3": {
@@ -28,6 +26,7 @@
     "DEPENDENCY4": {
       "require":  "lib/dependency4.js",
       "new":      true,
+      "store":    false,
       "args":     ["FS", "UTIL"]
     }
   },
@@ -44,12 +43,10 @@
     },
     "FS": {
       "require":  "fs",
-      "new":      false,
       "args":     []
     },
     "UTIL": {
       "require":  "util",
-      "new":      false,
       "args":     []
     },
     "DEPENDENCY3": {

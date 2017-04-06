@@ -61,4 +61,15 @@ describe('DI', () => {
         expect(instance.get.bind(instance, 'DEPENDENCY5')).to.throw(Error);
         done();
     });
+
+    it ('should handle store flag in dependencie\'s config', (done) => {
+        var dep1 = instance.get('DEPENDENCY4');
+        var dep2 = instance.get('DEPENDENCY4');
+        dep1.test = 1;
+        dep2.test = 3;
+        expect(dep1).to.not.deep.equal(dep2);
+        expect(dep1.test).to.equal(1);
+        expect(dep2.test).to.equal(3);
+        done();
+    });
 });
