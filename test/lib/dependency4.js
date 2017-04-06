@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = function (fs, util) {
+module.exports = function (fs, util, di) {
     this.test = false;
 
     this.getFs = function () {
@@ -9,5 +9,9 @@ module.exports = function (fs, util) {
 
     this.getUtil = function () {
         return util;
+    };
+
+    this.getDi = function () {
+        return di;
     };
 };

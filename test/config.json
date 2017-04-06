@@ -27,7 +27,7 @@
       "require":  "lib/dependency4.js",
       "new":      true,
       "store":    false,
-      "args":     ["FS", "UTIL"]
+      "args":     ["FS", "UTIL", "DI"]
     }
   },
   "test": {

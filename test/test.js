@@ -72,4 +72,9 @@ describe('DI', () => {
         expect(dep2.test).to.equal(3);
         done();
     });
+
+    it ('Should handle DI dependency', (done) => {
+        expect(instance.get('DEPENDENCY4').getDi()).to.deep.equal(instance);
+        done();
+    });
 });
