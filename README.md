@@ -11,7 +11,7 @@ node sample.js
 
 ## Installation
 ```
-npm install -s package name
+npm install -s simple-mdi
 ```
 
 ## Running tests

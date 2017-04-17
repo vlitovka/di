@@ -1,5 +1,5 @@
 {
-  "name": "di",
+  "name": "simple-mdi",
   "version": "0.1.0",
   "description": "DI module for js",
   "main": "lib/di.js",
@@ -16,7 +16,7 @@
     "test": "mocha"
   },
   "keywords": [
-    "DI"
+    "DI", "CONTAINER"
   ],
   "author": "Vladyslav Litovka <vlad.litovka@gmail.com>",
   "license": "Apache 2",
