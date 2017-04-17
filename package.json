@@ -6,6 +6,10 @@
   "directories": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/vlitovka/di.git"
+  },
   "dependencies": {},
   "devDependencies": {
     "chai": "^3.5.0",
