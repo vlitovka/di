@@ -7,17 +7,10 @@
     },
     "DEPENDENCY2": {
       "require":  "lib/dependency2.js",
-      "new":      true,
-      "args":     []
+      "new":      true
     },
-    "FS": {
-      "require":  "fs",
-      "args":     []
-    },
-    "UTIL": {
-      "require":  "util",
-      "args":     []
-    },
+    "FS": "fs",
+    "UTIL": "util",
     "DEPENDENCY3": {
       "require":  "lib/dependency3.js",
       "new":      true,
@@ -38,16 +31,11 @@
     },
     "DEPENDENCY2": {
       "require":  "lib/dependency2mock.js",
-      "new":      true,
-      "args":     []
+      "new":      true
     },
-    "FS": {
-      "require":  "fs",
-      "args":     []
-    },
+    "FS": "fs",
     "UTIL": {
-      "require":  "util",
-      "args":     []
+      "require":  "util"
     },
     "DEPENDENCY3": {
       "require":  "lib/dependency3mock.js",

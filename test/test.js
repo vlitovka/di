@@ -17,6 +17,7 @@ describe('DI', () => {
         expect(() => { new di(fs, {test:{'DEP2':{}}, run: {'DEP':{}}}, 'test', __dirname) }).to.throw(Error);
         expect(() => { new di(fs, {test:{'DEP2':{}}, run: {'DEP3':{}}}, 'test', __dirname) }).to.throw(Error);
         expect(() => { new di(fs, {test:{'DEP':{}}, run: {'DEP':{}}}, 'test', __dirname) }).to.throw(Error);
+        expect(() => { new di(fs, {test:{'DEP':{require:'FS',args:{}}}, run: {'DEP':{}}}, 'test', __dirname) }).to.throw(Error);
         done();
     });
 
@@ -45,7 +46,7 @@ describe('DI', () => {
     });
 
     it ('addDependency', (done) => {
-        expect(instance.addDependency.bind(instance, 'FS', fs)).to.throw(Error);
+        expect(instance.addDependency.bind(instance, 'UTIL', util)).to.throw(Error);
         expect(instance.addDependency.bind(instance, 'FS2')).to.throw(Error);
         expect(instance.addDependency.bind(instance, 'FS2', {})).to.not.throw(Error);
         expect(instance.addDependency.bind(instance, 'FS3', fs)).to.not.throw(Error);
