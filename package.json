@@ -1,10 +1,14 @@
 {
   "name": "simple-mdi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DI module for js",
   "main": "lib/di.js",
   "directories": {
     "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/vlitovka/di.git"
   },
   "dependencies": {},
   "devDependencies": {
@@ -13,17 +17,15 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "keywords": [
-    "DI", "CONTAINER"
+    "DI",
+    "CONTAINER"
   ],
   "author": "Vladyslav Litovka <vlad.litovka@gmail.com>",
   "license": "Apache 2",
   "engines": {
     "node": ">=4.2.6"
-  },
-  "scripts": {
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   }
 }
