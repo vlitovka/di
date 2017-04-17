@@ -1,0 +1,29 @@
+{
+  "name": "di",
+  "version": "0.1.0",
+  "description": "DI module for js",
+  "main": "lib/di.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "DI"
+  ],
+  "author": "Vladyslav Litovka <vlad.litovka@gmail.com>",
+  "license": "Apache 2",
+  "engines": {
+    "node": ">=4.2.6"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
+  }
+}
