@@ -59,7 +59,13 @@ describe('DI', () => {
         expect(instance.get.bind(instance, 'DEPENDENCY4')).to.not.throw(Error);
         expect(instance.get('DEPENDENCY4').getFs()).to.deep.equal(fs);
         expect(instance.get('DEPENDENCY4').getUtil()).to.deep.equal(util);
-        expect(instance.get.bind(instance, 'DEPENDENCY5')).to.throw(Error);
+        done();
+    });
+
+    it ('checking retrieval of dependency from other scope #2', (done) => {
+        expect(instance.get.bind(instance, 'DEPENDENCY5')).to.not.throw(Error);
+        expect(instance.get('DEPENDENCY5').getFs()).to.deep.equal(fs);
+        expect(instance.get('DEPENDENCY5').getUtil()).to.deep.equal(util);
         done();
     });
 
@@ -76,6 +82,11 @@ describe('DI', () => {
 
     it ('Should handle DI dependency', (done) => {
         expect(instance.get('DEPENDENCY4').getDi()).to.deep.equal(instance);
+        done();
+    });
+
+    it ('Should handle DI dependency #2', (done) => {
+        expect(instance.get('DEPENDENCY5').getDi()).to.deep.equal(instance);
         done();
     });
 });

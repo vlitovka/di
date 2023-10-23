@@ -21,6 +21,12 @@
       "new":      true,
       "store":    false,
       "args":     ["FS", "UTIL", "DI"]
+    },
+    "DEPENDENCY5": {
+      "require":  "lib/dependency5.js",
+      "new":      true,
+      "store":    false,
+      "args":     ["FS", "UTIL", "DI"]
     }
   },
   "test": {
